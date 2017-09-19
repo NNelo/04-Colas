@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/UCC-Programacion3/04-Colas.svg?branch=master)](https://travis-ci.org/UCC-Programacion3/01-Recursividad)
 
+
+![MEME](http://generadordememesonline.com/media/created/75tf7u.jpg)
+
 ## Ejercicio N°1.
 Diseñe un programa que sea capaz de leer dos colas y mediante un mensaje indicar si son 
 iguales. Nota: los elementos constitutivos de las colas son caracteres. 

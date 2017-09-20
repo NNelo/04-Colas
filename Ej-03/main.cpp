@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "../Cola/Cola.h"
 #include "ColaPrioridad.h"
 

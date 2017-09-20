@@ -5,7 +5,7 @@
 TEST(test_Ej03, test) {
     EXPECT_EQ(true, true);
 }
-/*
+
 using std::string;
 
 ColaPrioridad<string> *lacola;
@@ -31,4 +31,4 @@ TEST(test_Ej03, encolar) {
 //    lacola->encolar(0, 0);
 //    lacola->encolar(7, 7);
     ASSERT_FALSE(lacola->esVacia());
-}*/
+}

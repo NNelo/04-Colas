@@ -14,18 +14,55 @@
 #define INC_04_COLA_FILASUPERMERCADO_H
 
 #include "../Ej-03/ColaPrioridad.h"
-#include "Lista.h"
+#include "../Cola/Cola.h"
+
+typedef struct {
+    double monto_gastado;
+    unsigned long cant_productos;
+} D;
 
 class FilaSupermercado {
 private:
-    ColaPrioridad<Lista<double>> fila;
+    ColaPrioridad<D> fila;
     unsigned int cantEmbarazadas;
-    double pre
-
+    unsigned long cant_prod_total;
+    double monto_total;
 
 public:
-    FilaSupermercado() {
+    FilaSupermercado() : cantEmbarazadas(0), monto_total(0), cant_prod_total(0) {}
 
+    ~FilaSupermercado() {}
+
+    void ingresar_cliente(Cola<double> compras, bool embarazada) {
+        unsigned long cant = 0;
+        double monto = 0;
+        while (!compras.esVacia()) {
+            monto += compras.desencolar();
+            cant++;
+        }
+        if (embarazada)
+            cantEmbarazadas++;
+        monto_total += monto;
+        cant_prod_total += cant;
+        fila.encolar({monto, cant}, !embarazada);            // si esta embarazada bool = true = 1       Prioridad = 0
+    }
+
+    D atender_cliente() {
+        if (fila.esVacia())
+            throw -1;
+        return fila.desencolar();
+    }
+
+    unsigned int getCantEmbarazadas() {
+        return cantEmbarazadas;
+    }
+
+    unsigned long getCant_prod_total() {
+        return cant_prod_total;
+    }
+
+    double getMonto_total() {
+        return monto_total;
     }
 };
 
